@@ -1,0 +1,508 @@
+/* ========================================
+   DASAR WEBSITE
+======================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, #ffd6e7, #fff0f5);
+    font-family: Arial, sans-serif;
+    text-align: center;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    overflow-x: hidden;
+}
+
+
+/* ========================================
+   CONTAINER / KARTU CERITA
+======================================== */
+
+.container {
+    background-color: rgba(255, 255, 255, 0.95);
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    width: 80%;
+    max-width: 500px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.1);
+
+    z-index: 2;
+
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   JUDUL
+======================================== */
+
+.container h1 {
+    color: #e75480;
+
+    font-size: 36px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ========================================
+   PARAGRAF
+======================================== */
+
+.container p {
+    color: #555;
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
+}
+
+
+/* ========================================
+   TOMBOL
+======================================== */
+
+.container button {
+    background-color: #e75480;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 30px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Efek ketika mouse diarahkan */
+
+.container button:hover {
+    background-color: #d94370;
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 5px 15px rgba(231, 84, 128, 0.3);
+}
+
+
+/* Efek ketika tombol ditekan */
+
+.container button:active {
+    transform: scale(0.95);
+}
+
+
+/* ========================================
+   BUNGA DEKORASI
+======================================== */
+
+.flower {
+    position: absolute;
+
+    font-size: 40px;
+
+    animation:
+        float 3s ease-in-out infinite;
+
+    z-index: 1;
+
+    user-select: none;
+}
+
+
+/* Bunga 1 */
+
+.flower-1 {
+    top: 10%;
+    left: 10%;
+}
+
+
+/* Bunga 2 */
+
+.flower-2 {
+    bottom: 10%;
+    right: 10%;
+
+    animation-delay: 1s;
+}
+
+
+/* Bunga 3 */
+
+.flower-3 {
+    top: 15%;
+    right: 15%;
+
+    animation-delay: 0.5s;
+}
+
+
+/* Bunga 4 */
+
+.flower-4 {
+    bottom: 15%;
+    left: 15%;
+
+    animation-delay: 1.5s;
+}
+
+
+/* ========================================
+   ANIMASI BUNGA
+======================================== */
+
+@keyframes float {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ========================================
+   SCENE
+======================================== */
+
+.scene {
+    opacity: 0;
+
+    visibility: hidden;
+
+    position: absolute;
+
+    transform: translateY(10px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+
+/* Scene yang sedang aktif */
+
+.scene.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    position: relative;
+
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   ICON CERITA
+======================================== */
+
+.story-icon {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+
+    animation:
+        iconFloat 3s ease-in-out infinite;
+}
+
+
+/* Animasi icon */
+
+@keyframes iconFloat {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ========================================
+   TEKS CERITA
+======================================== */
+
+.story-text {
+    line-height: 1.8;
+
+    color: #555;
+
+    font-size: 18px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ========================================
+   SCENE FINAL
+======================================== */
+
+.final-scene {
+    padding: 45px 35px;
+}
+
+
+/* Judul pada scene final */
+
+.final-scene h1 {
+    font-size: 38px;
+}
+
+
+/* Pertanyaan utama */
+
+.final-scene h2 {
+    color: #e75480;
+
+    line-height: 1.6;
+
+    font-size: 24px;
+
+    margin: 25px 0;
+}
+
+
+/* Teks sebelum pertanyaan */
+
+.final-text {
+    color: #555;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+
+/* ========================================
+   TOMBOL PILIHAN
+======================================== */
+
+.choice-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 25px;
+
+    flex-wrap: wrap;
+}
+
+
+.choice-buttons button {
+    min-width: 110px;
+}
+
+
+/* Tombol pilihan kedua */
+
+#yesButton2 {
+    background-color: #ff9fba;
+}
+
+
+#yesButton2:hover {
+    background-color: #f584a5;
+}
+
+
+/* ========================================
+   PESAN TERAKHIR
+======================================== */
+
+.final-message {
+    color: #e75480;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    line-height: 1.8;
+
+    margin-top: 25px;
+}
+
+
+/* ========================================
+   EFEK KHUSUS SCENE 10
+======================================== */
+
+#scene10 .story-icon {
+    font-size: 65px;
+
+    animation:
+        heartbeat 1.5s ease-in-out infinite;
+}
+
+
+/* Animasi detak hati */
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.1);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* ========================================
+   SCENE 11
+======================================== */
+
+#scene11 .story-icon {
+    font-size: 65px;
+}
+
+
+#scene11 h1 {
+    margin-bottom: 25px;
+}
+
+
+/* ========================================
+   RESPONSIVE
+   Untuk HP
+======================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px;
+    }
+
+
+    .container {
+        width: 100%;
+
+        padding: 30px 22px;
+
+        border-radius: 20px;
+    }
+
+
+    .container h1 {
+        font-size: 29px;
+    }
+
+
+    .container p {
+        font-size: 16px;
+    }
+
+
+    .story-text {
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+
+    .story-icon {
+        font-size: 45px;
+    }
+
+
+    .final-scene h1 {
+        font-size: 32px;
+    }
+
+
+    .final-scene h2 {
+        font-size: 21px;
+    }
+
+
+    .flower {
+        font-size: 30px;
+    }
+
+
+    .flower-1 {
+        top: 5%;
+        left: 5%;
+    }
+
+
+    .flower-2 {
+        bottom: 5%;
+        right: 5%;
+    }
+
+
+    .flower-3 {
+        top: 8%;
+        right: 5%;
+    }
+
+
+    .flower-4 {
+        bottom: 8%;
+        left: 5%;
+    }
+
+}
